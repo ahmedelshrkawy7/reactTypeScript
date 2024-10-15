@@ -1,8 +1,13 @@
 import "./App.css";
 import Button from "./components/Button";
+import Container from "./components/Container";
+import Box from "./components/context/Box";
+import ThemeContextProvider from "./components/context/ThemeContext";
+import Counter from "./components/Counter";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
+import LoggedIn from "./components/LoggedIn";
 import Oscar from "./components/Oscar";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
@@ -48,6 +53,12 @@ function App() {
           console.log(e);
         }}
       />
+      <Container styles={{ display: "red" }} />
+      <LoggedIn />
+      <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </>
   );
 }
