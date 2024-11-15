@@ -1,9 +1,11 @@
 import "./App.css";
+import Privte from "./components/auth/Privte";
 import Button from "./components/Button";
 import Container from "./components/Container";
 import Box from "./components/context/Box";
 import ThemeContextProvider from "./components/context/ThemeContext";
 import Counter from "./components/Counter";
+import List from "./components/generics/List";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
@@ -59,6 +61,17 @@ function App() {
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider>
+
+      <Privte isLoggedIn={true} Component={Counter} />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />
+      <List
+        items={[
+          { first: "bruce", last: "wayne" },
+          { first: "clark", last: "kent" },
+          { first: "proncess", last: "diana" },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
     </>
   );
 }
